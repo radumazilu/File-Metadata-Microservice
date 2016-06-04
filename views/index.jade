@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
+    meta(charset='UTF-8')
+    title File Metadata Microservice
+  body
+    .container
+      .row
+        .col-md-8
+          h1.header File Metadata Microservice
+          p
+            | By radumazilu | See it on 
+            a(href='https://github.com/radumazilu') GitHub
+          blockquote
+            | User Stories:
+            ol
+              li I can submit a FormData object that includes a file upload.
+              li
+                | When I submit something, I will receive the file size in bytes within the JSON response
+              li
+                b Hint
+                |  You may want to use this package: 
+                a(href='https://www.npmjs.com/package/multer', target='_blank') Muler
+          h2 Example usage:
+          ul
+            li
+              code https://radumazilu-file-metadata.herokuapp.com 
+              p and submit a file
+          h2 Example output:
+          ul
+            li
+              code
+                | {"name":"document.html","size":7115,"date":"6/3/2016, 4:10:23 PM"}
+        .col-md-4.text-center
+          h2 Upload file
+          form(role='form', action='/uploads', method='post', enctype='multipart/form-data')
+            .form-group
+              input#myfile.form-control(type='file', name='newFile')
+              input#sendFile.btn.btn-danger(type='submit', name='send', style='margin-top: 10px; width: 100%')

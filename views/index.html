@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>File Metadata Microservice</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="header">File Metadata Microservice</h1>
+          <p>By radumazilu | See it on <a href="https://github.com/radumazilu">GitHub</a></p>
+          <blockquote>User Stories:
+            <ol>
+              <li>I can submit a FormData object that includes a file upload.</li>
+              <li>When I submit something, I will receive the file size in bytes within the JSON response</li>
+              <li> <b>Hint</b> You may want to use this package: <a href="https://www.npmjs.com/package/multer" target="_blank">Muler</a></li>
+            </ol>
+          </blockquote>
+          <h2>Example usage:</h2>
+          <ul>
+            <li><code>https://radumazilu-image-search.herokuapp.com/api/imagesearch/taco</code><br></li>
+            <li><code>https://radumazilu-image-search.herokuapp.com/latest</code></li>
+          </ul>
+          <h2>Example output:</h2>
+          <ul>
+            <li><code>[{<br>          &quot;url&quot;:&quot;http://www.captainfussybuckets.com/wp-content/uploads/2012/10/BeefTacoCrispy-copy.png&quot;,<br>          &quot;snippet&quot;:&quot;October 4th is National Taco Day...Free Tacos at Taco Bueno!&quot;,<br>          &quot;thumbnail&quot;:&quot;http://ts2.mm.bing.net/th?id=OIP.M4ef9467e6a135fa9d5abd0b6a5264713H0&amp;pid=15.1&quot;,<br>          &quot;context&quot;:&quot;www.captainfussybuckets.com/2012/10/october-4th-is-national-taco...&quot;<br>        }]</code></li>
+            <li><code>[{<br>          &quot;term&quot;:&quot;taco&quot;,<br>          &quot;date&quot;:&quot;5/24/2016, 10:47:06 PM&quot;<br>        }]</code></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Upload file</h2>
+            <form role="form" action="/uploads" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <input type="file" class="form-control" name="newFile" id="myfile">
+                <input type="submit" class="btn btn-danger" name="send" style="margin-top: 10px; width: 100%" id="sendFile">
+              </div>
+            </form>
+        </div>
+        </div>
+      </div>
+  </body>
+</html>
